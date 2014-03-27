@@ -1,0 +1,24 @@
+<?php
+// module/ItemView/view/item-view/item-view/index.phtml:
+
+$title = 'Catalog';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<table class="table">
+    <tr>
+        <th>Item_no</th>
+        <th>Name</th>
+        <th>Price</th>
+        <!--<th>&nbsp;</th>/-->
+    </tr>
+    <?php foreach ($itemviews as $itemview) : ?>
+        <tr>
+            <td><?php echo $this->escapeHtml($itemview->item_no);?></td>
+            <td><?php echo $this->escapeHtml($itemview->name);?></td>
+            <td><?php echo $this->escapeHtml($itemview->description);?></td>
+            <td><?php echo $this->escapeHtml($itemview->price);?></td>
+         </tr>
+    <?php endforeach; ?>
+</table>
